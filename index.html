@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Project PS</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:url("background.gif") no-repeat center center fixed;
+background-size:cover;
+min-height:100vh;
+overflow:hidden;
+position:relative;
+}
+
+.overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+}
+
+.container{
+position:relative;
+width:100%;
+height:100vh;
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+}
+
+.logo{
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+
+    width:min(900px,90vw);
+
+    margin-bottom:0;
+
+    user-select:none;
+
+    filter:drop-shadow(0px 0px 25px rgba(183,70,255,.5));
+
+}
+
+.discord{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+    display:inline-block;
+
+    transition:.25s;
+
+}
+
+.discord img{
+
+    width:min(700px,85vw);
+
+    display:block;
+
+}
+
+.discord:hover{
+    transform:translate(-50%,-50%) scale(1.05);
+
+    filter:drop-shadow(0px 0px 25px #b300ff);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+    <img src="logo.png" class="logo" alt="Project PS">
+
+    <a
+        class="discord"
+        href="https://discord.gg/qCZM4HfNJp"
+        target="_blank"
+    >
+        <img src="discord.png" alt="Discord Server">
+    </a>
+
+</div>
+
+</body>
+</html>
