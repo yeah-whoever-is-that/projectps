@@ -41,16 +41,16 @@ body {
 
 .downloads {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 57%;
+    left: 39%;
     transform: translate(-50%, -50%);
     display: inline-block;
     transition: 0.25s;
-    z-index: 3;
+    z-index: -2;
 }
 
 .downloads img {
-    width: min(700px, 85vw);
+    width: min(500px, 85vw);
     display: block;
 }
 
@@ -61,7 +61,7 @@ body {
 
 .youtube {
     position: absolute;
-    top: calc(50% + 180px);
+    top: calc(43% + 180px);
     left: calc(50% - 300px);
     transform: translateX(-50%);
     display: inline-block;
@@ -80,8 +80,8 @@ body {
 
 .discord {
     position: absolute;
-    top: calc(50% + 180px);
-    left: calc(50% + 300px);
+    top: calc(56% + 180px);
+    left: calc(-4% + 300px);
     transform: translateX(-50%);
     display: inline-block;
     transition: 0.25s;
