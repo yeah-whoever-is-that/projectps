@@ -1,113 +1,139 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: url("background.gif") no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    overflow: hidden;
-    position: relative;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:url("background.gif") center/cover no-repeat fixed;
+    min-height:100vh;
+    overflow:hidden;
 }
 
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 1;
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:1;
 }
 
-.container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    z-index: 2;
-    text-align: center;
+.container{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
-.logo {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(900px, 90vw);
-    margin-bottom: 0;
-    user-select: none;
-    filter: drop-shadow(0px 0px 25px rgba(183, 70, 255, 0.5));
+.logo{
+    width:min(850px,90vw);
+    margin:20px auto;
+    filter:drop-shadow(0 0 25px rgba(183,70,255,.5));
+    user-select:none;
 }
 
-.downloads {
-    position: absolute;
-    top: 57%;
-    left: 39%;
-    transform: translate(-50%, -50%);
-    display: inline-block;
-    transition: 0.25s;
-    z-index: -2;
+.content{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 80px;
 }
 
-.downloads img {
-    width: min(500px, 85vw);
-    display: block;
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+    width:35%;
 }
 
-.downloads:hover {
-    transform: translate(-50%, -50%) scale(1.05);
-    filter: drop-shadow(0px 0px 25px #00ff00);
+.button{
+    display:block;
+    transition:.25s;
 }
 
-.youtube {
-    position: absolute;
-    top: calc(43% + 180px);
-    left: calc(50% - 300px);
-    transform: translateX(-50%);
-    display: inline-block;
-    transition: 0.25s;
+.button img{
+    width:420px;
+    max-width:100%;
+    display:block;
 }
 
-.youtube img {
-    width: 360px;
-    display: block;
+/* Download 1.5x plus grand */
+
+.download img{
+    width:630px;
+    max-width:100%;
 }
 
-.youtube:hover {
-    transform: translateX(-50%) scale(1.05);
-    filter: drop-shadow(0px 0px 25px #FF0000);
+.button:hover{
+    transform:scale(1.05);
 }
 
-.discord {
-    position: absolute;
-    top: calc(56% + 180px);
-    left: calc(-4% + 300px);
-    transform: translateX(-50%);
-    display: inline-block;
-    transition: 0.25s;
+.download:hover{
+    filter:drop-shadow(0 0 25px #00ff00);
 }
 
-.discord img {
-    width: 360px;
-    display: block;
+.buttons a:nth-child(2):hover{
+    filter:drop-shadow(0 0 25px red);
 }
 
-.discord:hover {
-    transform: translateX(-50%) scale(1.05);
-    filter: drop-shadow(0px 0px 25px #b300ff);
+.buttons a:nth-child(3):hover{
+    filter:drop-shadow(0 0 25px #b300ff);
 }
 
-/* ceci est un test */
-@media (max-width: 1100px) {
-    .discord, .youtube {
-        width: 100%;
-        left: 50%;
-        transform: translateX(-50%);
+/* -------------------- */
+/* Zone images */
+/* -------------------- */
+
+.preview{
+    width:55%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Image d'exemple */
+
+.preview img{
+    max-width:100%;
+    max-height:85%;
+    border-radius:12px;
+}
+
+/* -------------------- */
+/* Mobile */
+/* -------------------- */
+
+@media (max-width:900px){
+
+    body{
+        overflow:auto;
     }
-    .discord {
-        top: calc(50% + 400px);
+
+    .content{
+        flex-direction:column;
+        justify-content:flex-start;
+        padding:20px;
     }
-    .youtube {
-        top: calc(50% + 220px);
+
+    .buttons{
+        width:100%;
+        align-items:center;
+    }
+
+    .button img{
+        width:min(340px,90vw);
+    }
+
+    .download img{
+        width:min(510px,95vw);
+    }
+
+    /* Cache la zone d'images */
+    .preview{
+        display:none;
     }
 }
